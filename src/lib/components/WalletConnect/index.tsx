@@ -11,33 +11,26 @@ import {
   MenuList,
   MenuItem,
   MenuGroup,
-  useDisclosure
-} from '@chakra-ui/react'
-import {
-  useAccount,
-  useDisconnect
-} from 'wagmi'
-import Connector from './Connector';
-import { shortAddr } from 'helpers';
+  useDisclosure,
+} from "@chakra-ui/react";
+import { useAccount, useDisconnect } from "wagmi";
+import Connector from "./Connector";
+import { shortAddr } from "helpers";
 
 const WalletConnect = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   return (
     <>
-      {!isConnected &&
-        <Button
-          colorScheme='blue'
-          variant='outline'
-          onClick={onOpen}
-        >
+      {!isConnected && (
+        <Button colorScheme="blue" variant="outline" onClick={onOpen}>
           Connect a Wallet
         </Button>
-      }
-      {isConnected &&
+      )}
+      {isConnected && (
         <Menu>
-          <MenuButton as={Button} colorScheme='blue'>
+          <MenuButton as={Button} colorScheme="blue">
             {shortAddr(address)}
           </MenuButton>
           <MenuList>
@@ -46,7 +39,7 @@ const WalletConnect = () => {
             </MenuGroup>
           </MenuList>
         </Menu>
-      }
+      )}
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
@@ -59,7 +52,7 @@ const WalletConnect = () => {
         </ModalContent>
       </Modal>
     </>
-  )
-}
+  );
+};
 
 export default WalletConnect;

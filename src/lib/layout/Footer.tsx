@@ -1,4 +1,4 @@
-import { 
+import {
   Button,
   ButtonGroup,
   Container,
@@ -8,26 +8,26 @@ import {
   Stack,
   Text,
   Link,
-  Heading
- } from "@chakra-ui/react";
-import * as React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+  Heading,
+} from "@chakra-ui/react";
+import * as React from "react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <Container maxW="1000" as="footer" role="contentinfo">
       <Stack
         spacing="8"
-        direction={{ base: 'column', md: 'row' }}
+        direction={{ base: "column", md: "row" }}
         justify="space-between"
-        py={{ base: '12', md: '16' }}
+        py={{ base: "12", md: "16" }}
       >
-        <Stack spacing={{ base: '6', md: '8' }} align="start">
+        <Stack spacing={{ base: "6", md: "8" }} align="start">
           <Heading size="md">NFTLaunchKit</Heading>
         </Stack>
         <Stack
-          direction={{ base: 'column-reverse', md: 'column', lg: 'row' }}
-          spacing={{ base: '12', md: '8' }}
+          direction={{ base: "column-reverse", md: "column", lg: "row" }}
+          spacing={{ base: "12", md: "8" }}
         >
           <Stack direction="row" spacing="8">
             <Stack spacing="4" minW="36" flex="1">
@@ -55,7 +55,11 @@ const Footer = () => {
             <Text fontSize="sm" fontWeight="semibold" color="subtle">
               Stay up to date
             </Text>
-            <Stack spacing="4" direction={{ base: 'column', sm: 'row' }} maxW={{ lg: '360px' }}>
+            <Stack
+              spacing="4"
+              direction={{ base: "column", sm: "row" }}
+              maxW={{ lg: "360px" }}
+            >
               <Input placeholder="Enter your email" type="email" required />
               <Button variant="primary" type="submit" flexShrink={0}>
                 Subscribe
@@ -69,11 +73,12 @@ const Footer = () => {
         pt="8"
         pb="12"
         justify="space-between"
-        direction={{ base: 'column-reverse', md: 'row' }}
+        direction={{ base: "column-reverse", md: "row" }}
         align="center"
       >
         <Text fontSize="sm" color="subtle">
-          &copy; {new Date().getFullYear()} Chakra UI Pro, Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} Chakra UI Pro, Inc. All rights
+          reserved.
         </Text>
         <ButtonGroup variant="ghost">
           <IconButton
@@ -82,8 +87,18 @@ const Footer = () => {
             aria-label="LinkedIn"
             icon={<FaLinkedin fontSize="1.25rem" />}
           />
-          <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="1.25rem" />} />
-          <IconButton as="a" href="#" aria-label="Twitter" icon={<FaTwitter fontSize="1.25rem" />} />
+          <IconButton
+            as="a"
+            href="#"
+            aria-label="GitHub"
+            icon={<FaGithub fontSize="1.25rem" />}
+          />
+          <IconButton
+            as="a"
+            href="#"
+            aria-label="Twitter"
+            icon={<FaTwitter fontSize="1.25rem" />}
+          />
         </ButtonGroup>
       </Stack>
     </Container>

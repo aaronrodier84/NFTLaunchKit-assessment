@@ -13,16 +13,16 @@ import {
   createClient,
   defaultChains,
   configureChains,
-} from 'wagmi'
+} from "wagmi";
 
-import { publicProvider } from 'wagmi/providers/public'
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
+import { publicProvider } from "wagmi/providers/public";
+import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 
 // Configure chains & providers.
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
   publicProvider(),
-])
+]);
 
 // Set up client using the wagmi
 const client = createClient({
@@ -32,13 +32,13 @@ const client = createClient({
     new CoinbaseWalletConnector({
       chains,
       options: {
-        appName: 'wagmi.sh',
+        appName: "wagmi.sh",
       },
     }),
   ],
   provider,
   webSocketProvider,
-})
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
